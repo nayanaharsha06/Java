@@ -1,0 +1,46 @@
+
+    
+    static boolean isAnagram(String a, String b) {
+        if(a.length() != b.length()){
+            return false;
+        }
+    
+        a=a.toLowerCase();
+        b=b.toLowerCase();
+    
+        char[] aChar= a.toCharArray();
+        char[] bChar =b.toCharArray();
+    
+        sortCharArray(aChar);
+        sortCharArray(bChar);
+    
+        return compareCharArray(aChar,bChar);
+    }
+    
+    
+    static boolean compareCharArray(char[] arr1,char[] arr2){
+        for(int i =0; i<arr1.length;i++){
+            if(arr1[i] != arr2[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    
+
+    static void sortCharArray(char[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    char temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+
+  
+
+
