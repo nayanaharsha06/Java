@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String CleanedString = A.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        
+        int left = 0;
+        int right = CleanedString.length() -1;
+        
+        while(left <right){
+            if(CleanedString.charAt(left) != CleanedString.charAt(right)){
+                System.out.println("No");
+                return;
+            }
+            left++;
+            right--;
+        }
+        System.out.println("Yes");
+    }
+}
+
+
+
